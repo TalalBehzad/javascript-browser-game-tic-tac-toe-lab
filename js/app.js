@@ -1,7 +1,9 @@
 /*-------------------------------- Constants --------------------------------*/
-
-const squareEls = document.querySelector(`board`);
-const messageEls = document.querySelector(`message`)
+const winningCombos = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    [0, 4, 8], [2, 4, 6]
+  ];
 /*---------------------------- Variables (state) ----------------------------*/
 let board = ['', '', '', '', '', '', '', '', ''];
 let turn = `X`;
@@ -11,8 +13,8 @@ let tie = `false`;
 
 /*------------------------ Cached Element References ------------------------*/
 
-
-
+  const squareEls = document.querySelector(`board`);
+  const messageEls = document.querySelector(`message`)
 /*-------------------------------- Functions --------------------------------*/
 //function is a section of reusable code// 
 function init(){
@@ -26,15 +28,24 @@ function render(){
 }
 
 function updateBoard(){
-    board.forEach(updateBoard);
+    board.forEach((element, index) => {
+        squareEls[index].textContext = element
+    }
+    
+
+        // index, element
+        // update squareEls textContext based on index
+    );
+
 }
 
 function updateMessage(){
  if(winner and tie )  
 }
+
 /*----------------------------- Event Listeners -----------------------------*/
 
-
+ 
 
 
 
